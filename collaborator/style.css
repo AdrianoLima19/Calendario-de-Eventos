@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap&subset=greek,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+/*
+ | font-family: 'Open Sans', sans-serif;
+ | font-family: 'Lato', sans-serif;
+ | font-family: 'Source Sans Pro', sans-serif;
+*/
+/* Global Settings */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+    }
+    html, body {
+        max-width: 100vw;
+    }
+/* Global Settings */
+
+/* Container Grid */
+    .container {
+        height: 100vh;
+        width: 100vw;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(12 1fr);
+        grid-template-rows: 10vh 80vh 10vh;
+        background: radial-gradient(#e0e0e0, #ececec, #f0f0f0);
+    }
+/* Container Grid */
+
+/* Header */
+    .top {
+        width: 100vw;
+        grid-column: 1/13;
+        grid-row: 1/2;
+
+        background: #035e7f;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .top a {
+        height: 100%;
+        width: max-content;
+    }
+    .top a img {
+        height: 95%;
+    }
+    .top .options ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    .top .options ul li {
+        padding: 0 20px;
+    }
+    .top ul li:last-child {
+        padding: 0 30px 0 20px;
+    }
+    .top .options ul li a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    .top ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    /* This Page */
+        .options ul li:nth-child(4) {
+            color: whitesmoke !important;
+            text-decoration: underline !important;
+        }
+    /* This Page */
+
+/* Header */
+
+/* Main Content */
+    /* Layout */
+        .content {
+            grid-column: 1/13;
+            grid-row: 2/3;
+
+            overflow-y: auto;
+        }
+    /* Layout */
+
+    /* Title */
+        .content .contentTitle {
+            margin-top: 2%;
+            text-align: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+    /* Title */
+
+    /* Options */
+        .content .contentOptions {
+            margin: 3% auto .4% auto;
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content .contentOptions img {
+            width: 25px;
+        }
+    /* Options */
+
+    /* Table */
+        .content .contentTable {
+            margin: 0 auto;
+            width: 60%;
+            border-collapse: collapse;
+        }
+
+        .content .contentList:nth-child(odd) {
+            background-color: #a9bdd7;
+        }
+
+        .content .contentTable th {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            border: .1vw solid black;
+        }
+        .content .contentTable .contentList td {
+            padding: 6px 2px 6px 10px;
+        }
+        .content .contentTable td {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: 1.1rem;
+            border: .1vw solid black;
+        }
+
+        .content .contentTable td div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content .contentTable td div img {
+            cursor: pointer;
+            width: 30px;
+        }
+        .content .contentTable td:last-child div img {
+            width: 25px;
+        }
+    /* Table */
+/* Main Content */
+
+/* Footer */
+    .bottom {
+        grid-column: 1/13;
+        grid-row: 3/4;
+
+        background: #1c1c1c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+/* Footer */
+
+/* Modal Delete */
+.deleteModal {
+    grid-column: 1/13;
+    grid-row: 2/3;
+    
+    display: none; /* change this value to flex in javascript to show the delete modal */
+    justify-content: center;
+    align-items: center;
+}
+
+.formDeleteModal h2 span {
+    text-decoration: underline;
+}
+.formDeleteModal h2 {
+    font-size: 1.6rem;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.formDeleteModal .formOptions {
+    display: flex;
+    justify-content: center;
+}
+.formDeleteModal .formOptions input {
+    margin: 4%;
+    border: 1px solid #035e7f;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    padding: 5px 15px;
+    outline: none;
+    cursor: pointer;
+}
+.formDeleteModal .formOptions input:hover {
+    background: #035e7f;
+    color: white;
+}
+.formDeleteModal .formOptions input:active {
+    color: #035e7f;
+}
+/* Modal Delete */
+
+/* Create Edit */
+    .createModal,
+    .editModal {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+
+        background: rgba(73, 73, 73, 0.815);
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formCreate,
+    .formEdit {
+        width: 30%;
+        height: max-content;
+        background: whitesmoke;
+        border-radius: 5px;
+        padding: 1.5% 1%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .formCreate .col,
+    .formEdit .col {
+        display: flex;
+        flex-direction: column;
+    }
+    .formCreate .col label,
+    .formEdit .col label {
+        font-size: 1.4rem;
+        padding-left: 6px;
+    }
+    .formCreate input[type='submit']:active,
+    .formEdit input[type='submit']:active {
+        color: #035e7f;
+        background: #035e7f;
+    }
+    .formCreate input[type='submit']:hover,
+    .formEdit input[type='submit'] {
+        background: #035e7f;
+        color: white;
+    }
+    .formCreate input[type='text']:hover,
+    .formCreate input[type='email']:hover,
+    .formCreate input[type='password']:hover,
+    .formCreate select:hover,
+    .formEdit input[type='text']:hover,
+    .formEdit input[type='email']:hover,
+    .formEdit input[type='password']:hover,
+    .formEdit select:hover {
+        box-shadow: inset 0 0 .3rem #035e7f;
+    }
+    .formCreate input[type='text'],
+    .formCreate input[type='email'],
+    .formCreate input[type='password'],
+    .formCreate select,
+    .formEdit input[type='text'],
+    .formEdit input[type='email'],
+    .formEdit input[type='password'],
+    .formEdit select {
+        margin-bottom: 20px;
+    }
+    .formCreate input,
+    .formCreate select,
+    .formEdit input,
+    .formEdit select {
+        font-size: 1.2rem;
+        border: 1px solid #035e7f;
+        border-radius: 5px;
+        background: white;
+        outline: none;
+        padding: 2px 0 2px 6px;
+    }
+/* Create Edit */
