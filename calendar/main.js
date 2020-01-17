@@ -105,44 +105,39 @@ function loadMonth(ym, reload) {
         if($("#month-search").val() == "") {
             return;
         }
-        
+
         data = $("#month-search").val()
-        
+
         $('#month-search').val('')
         $('#month-search').trigger("blur");
 
         loadMonth(data)
     })
 
-    $("#btn-today").click(function () {
+    $("#btn-today").click(function () { // Today
 
         data = $("#hbtn-today").val()
-
         loadMonth(data)
     })
 
     $("#pm").click(function () { // Previus month
 
         data = $("#hpm").val()
-
         loadMonth(data)
     })
     $("#py").click(function () { // Previus Year
 
         data = $("#hpy").val()
-
         loadMonth(data)
     })
     $("#nm").click(function () { // Next month
 
         data = $("#hnm").val()
-
         loadMonth(data)
     })
     $("#ny").click(function () { // Next year
 
         data = $("#hny").val()
-
         loadMonth(data)
     })
 // Navigation Buttons
@@ -304,10 +299,9 @@ function loadMonth(ym, reload) {
         }
 
         $(".modal").fadeIn(150).css('display', 'flex')
+
         if (type != 'update') {
-
             document.getElementById('inputTitle').focus();
-
         }
 
     }
@@ -331,6 +325,7 @@ function loadMonth(ym, reload) {
 
     // Buttons
         function modalListener() {
+
             $(".btn-add input").click(function () {
             
                 openModal('create')
@@ -859,6 +854,7 @@ function loadMonth(ym, reload) {
             $(".leftEventScroll").css('overflow-y', 'auto')
 
         }
+        showMoreReload()
     }
 
     // Open/Close Aside
@@ -924,39 +920,71 @@ function loadMonth(ym, reload) {
 // Left Aside
 
 // More Events
-    
+    function showMoreReload() {
+        $('.more-event #btn-show-more').each(function () {
+            var tooltip = $(this).siblings().get(0)
+            if ($(tooltip).css('display') == 'block') {
+                
+                var button = $(this).get(0)
+                var width = $($($(this).siblings().get(0)).parents().get(0)).width()
+
+                $(tooltip).width(width)
+
+                Popper.createPopper(button,tooltip, {
+                    placement: 'bottom',
+                })
+            }
+        })
+    }
+
     function showMore() {
         
-        // $(".more-event #btn-show-more").click(function () {
-        //     // console.log($(this).siblings().get(0))
-        //     $(this).siblings().slideToggle(100)
-        //     var button = $(this).get(0)
-        //     var tooltip = $(this).siblings().get(0)
-        //     var arrow = $(this).siblings().children().get(0)
-        //     var page = $('.container').get(0)
-            
-        //     Popper.createPopper(button,tooltip, {
-        //         placement: 'bottom',
-        //     })
-        // })
+        // Show More Events Open/Close
+            $(".more-event #btn-show-more").click(function () {
+                $(this).siblings().slideToggle(100)
+                var button = $(this).get(0)
+                var tooltip = $(this).siblings().get(0)
+                var arrow = $(this).siblings().children().get(0)
+                var page = $('.container').get(0)
+                var width = $($($(this).siblings().get(0)).parents().get(0)).width()
+                $(tooltip).width(width)
+                
+                Popper.createPopper(button,tooltip, {
+                    placement: 'bottom',
+                })
+                
+                setTimeout(() => {
+                    showMoreReload()
+                }, 100);
+            });
+        // Show More Events Open/Close
 
-    //     // Open Modal
-    //         $(".list li h5").click(function () {
-    //             console.log('click')
-    //         })
-    //     // Open Modal
-    //     // Close
-        // $( '.container' ).scroll(function() {
-        //     // console.log('scroll')
-        //     // $('.event-calendar .event-table tr:nth-child(4) ul').fadeOut(100)
-        //     popperInstance.update();
-        // });
-        // $(document).click(function(e) {
-        //     var target = e.target;
-        //     if (!$(target).is('.dropdown') && !$(target).parents().is('.dropdown')) {
-        //       $('.dropdown-menu').hide();
-        //     }
-        //   });
-    //     // Close
+        // Open Modal
+            $('.list ul h5').click(function () {
+                openModal('update',this.dataset.id)
+                $($(this).parents().get(3)).fadeOut(10)
+            })
+        // Open Modal
+
+        // Scroll Update
+            $('.container').scroll(function() {
+                
+                showMoreReload()
+                
+            });
+        // Scroll Update
     }
+    $('body').on('click', function (e) {
+        $('.more-event #btn-show-more').each(function () {
+            var tooltip = $(this).siblings().get(0)
+            var button = $(this).get(0)
+            if ($(tooltip).css('display') == 'block') {
+
+                if ($(e.target).get(0) != button && $(e.target).get(0) != tooltip) { 
+                    $(tooltip).fadeOut(100)
+                }
+            }
+        });
+        // 
+    });
 // More Events

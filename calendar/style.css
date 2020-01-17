@@ -21,7 +21,8 @@
         font-weight: 400;
     }
     html, body {
-        max-width: 100vw;
+        width: 100vw;
+        /* max-width: 100vw; */
         overflow: hidden;
     }
 /* Global Settings */
@@ -239,7 +240,7 @@
     .leftEventBlock div h4 {
         padding-left: 8px;
         text-indent: 1rem;
-        text-align: justify;
+        /* text-align: justify; */
     }
     .leftEventBlock div:first-child {
         padding: 5px 0;
@@ -392,7 +393,18 @@
             display: none;
             position: absolute;
             width: calc(100% / 7.3);
+            background: rgba(51, 51, 51, 0.7);
+            border: 1px solid grey;
         }
+        .event-calendar .event-table tr:nth-child(4) .list ul li h5 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            font-size: .9rem;
+            text-align: center;
+            padding: 2px 0;
+            margin: 0 0 5px 0;
+        }
+
     /* More Events List */
 /* Event Calendar */
 

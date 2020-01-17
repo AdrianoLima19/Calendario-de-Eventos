@@ -344,7 +344,7 @@ for ($week=0;$week<=5;$week++)  {
                 
                 if ($event['id'] == $id) {
                     
-                    $dropList[$week][$day] .= '<li><div> <h5 style="'.$color1[$week][$day].'"> '.utf8_encode($event['title']).' </h5> </div></li>';
+                    $dropList[$week][$day] .= '<li><div> <h5 style="'.$color1[$week][$day].'" data-id="'.$event['id'].'"> '.utf8_encode($event['title']).' </h5> </div></li>';
 
                 }
             }
