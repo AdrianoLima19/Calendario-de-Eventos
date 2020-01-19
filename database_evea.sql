@@ -117,15 +117,16 @@ CREATE TABLE IF NOT EXISTS `tb_users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(60) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tb_users`
 --
 
 INSERT INTO `tb_users` (`id`, `name`, `profile`, `email`, `password`) VALUES
-(1, 'Adriano Lima de Souza', 8, 'surerloki3379@gmail.com', '$2y$10$w5Hxobb4gN1wwC00NZ6e8.knG8yJj0q0eqQulP4aFFbYcSQYc/5iC'),
-(2, 'Gabriely Schleider', 8, 'gabrielyschleider@outlook.com', '$2y$10$w5Hxobb4gN1wwC00NZ6e8.knG8yJj0q0eqQulP4aFFbYcSQYc/5iC');
+(1, 'Admin Teste', '8', 'admin@teste.com', '$2y$10$0CDsWAInim6pzKjF6Dh3dO5Jsuipmt4TWoFop80zpwezXRzEq2KJm'),
+(2, 'Gerente Teste', '5', 'gerente@teste.com', '$2y$10$C369SWINuDtLtIGm9Qgu9ek8amyyptnFSLBwnbvFUBsOgfGPfhk3W'),
+(3, 'Convidado Teste', '2', 'convidado@teste', '$2y$10$akskUHgCvjPqP.7afj/MJuKDktUGn/FIew7Esa8NGslDE7CI8pyBW');
 
 --
 -- Restrições para despejos de tabelas

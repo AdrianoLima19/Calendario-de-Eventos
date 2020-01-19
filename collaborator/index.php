@@ -52,27 +52,35 @@
             <h3>Copyright &copy; 2019 Grupo Evea - todos os direitos reservados</h3>
         </footer>
 
+        <div class="closeSpace">
+            
+            <div class="close-mod">
+                <span class="btn-close-mod">X</span>
+            </div>
+        </div>
+
         <div class="createModal">
+            <div class="closeClick"></div>
             <form class="formCreate">
                 <div class="col">
                     <label for="">Nome</label>
-                    <input type="text" name="" id="">
+                    <input type="text" id="colabName">
                 </div>
                 <div class="col">
-                    <select name="" id="">
-                        <option value="0">Escolha um perfil</option>
-                        <option value="">Administrador</option>
-                        <option value="">Gerente</option>
-                        <option value="">Convidado</option>
+                    <select id="colabProfile">
+                        <option value="">Escolha um perfil</option>
+                        <option value="8">Administrador</option>
+                        <option value="5">Gerente</option>
+                        <option value="2">Convidado</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="">E-mail</label>
-                    <input type="email" name="" id="">
+                    <input type="email" id="colabEmail">
                 </div>
                 <div class="col">
                     <label for="">Senha</label>
-                    <input type="password" name="" id="">
+                    <input type="password" id="colabPassword">
                 </div>
                 <div class="col">
                     <input type="submit" value="Salvar">
@@ -81,22 +89,24 @@
         </div>
 
         <div class="editModal">
+            <div class="closeClick"></div>
+            <input id="editID" type="hidden">
             <form class="formEdit">
                 <div class="col">
                     <label for="">Nome</label>
-                    <input type="text" name="" id="">
+                    <input type="text" id="editName">
                 </div>
                 <div class="col">
-                    <select name="" id="">
-                        <option value="0">Escolha um perfil</option>
-                        <option value="">Administrador</option>
-                        <option value="">Gerente</option>
-                        <option value="">Convidado</option>
+                    <select id="editProfile">
+                        <option value="">Escolha um perfil</option>
+                        <option value="8">Administrador</option>
+                        <option value="5">Gerente</option>
+                        <option value="2">Convidado</option>
                     </select>
                 </div>
                 <div class="col">
                     <label for="">E-mail</label>
-                    <input type="email" name="" id="">
+                    <input type="email" id="editEmail">
                 </div>
                 <div class="col">
                     <input type="submit" value="Salvar">
